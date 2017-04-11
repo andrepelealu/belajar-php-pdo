@@ -64,6 +64,15 @@
             </div>
             <!-- /.navbar-collapse -->
         </div>
+      <?php    include_once 'connectDB.php';
+$id=$_GET['id'];
+$query = "SELECT * FROM posts WHERE postID = $id";
+$run = $db->query($query);
+foreach ($run as $value) {
+    echo $value['postTitle'];
+    echo date("d-M-Y",strtotime($value['postDate']));
+    echo $value['postContent']
+    ?>
         <!-- /.container -->
     </nav>
 
